@@ -72,7 +72,7 @@ public class Recorrido extends AppCompatActivity implements View.OnClickListener
         estado_anterior = (TextView) findViewById(R.id.estado_anterior);
         direccion = (TextView) findViewById(R.id.direccion);
         estado_nuevo = (EditText) findViewById(R.id.estado_nuevo);
-        nro_medidor= (EditText) findViewById(R.id.estado_nuevo);
+        nro_medidor= (TextView) findViewById(R.id.nro_medidor);
         ubicacion_activa=true;
         detener_carga=false;
         estado_nuevo.addTextChangedListener(new TextWatcher() {

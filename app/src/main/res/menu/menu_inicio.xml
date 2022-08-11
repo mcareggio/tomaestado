@@ -18,6 +18,11 @@
         android:title="Cargar Ruta y  Folio"
         app:showAsAction="never" />
     <item
+        android:id="@+id/action_actualizar_datos"
+        android:orderInCategory="100"
+        android:title="Actualizar Datos"
+        app:showAsAction="never" />
+    <item
         android:id="@+id/agregar_usuario"
         android:orderInCategory="100"
         android:title="Agregar Usuario"

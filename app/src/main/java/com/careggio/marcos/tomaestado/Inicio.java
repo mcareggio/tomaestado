@@ -104,6 +104,13 @@ public class Inicio extends AppCompatActivity {
             case R.id.action_serverconexion:
                 Intent i7 = new Intent(this, Serverconexion.class);
                 startActivity(i7);
+                break;
+            case R.id.action_actualizar_datos:
+                Toast.makeText(this, "Actualizar Datos", Toast.LENGTH_SHORT).show();
+
+                Intent i8 = new Intent(this, Actualizar_Datos.class);
+                startActivity(i8);
+                break;
 
         }
 
