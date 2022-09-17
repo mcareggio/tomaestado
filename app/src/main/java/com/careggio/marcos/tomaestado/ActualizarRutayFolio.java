@@ -162,6 +162,19 @@ public class ActualizarRutayFolio {
         }
         return res;
     }
+    public void actualizarNombreDireNrommed(Context context){
+        Bbdd bd=new Bbdd();
+        String consulta="SELECT ruta,folio,nombre_apellido,direccion,nro_med_energia,nro_med_agua,med_energia,med_agua from usuarios_tmp";
+        String [][] res=bd.consutlar(context,consulta);
+        int i=0;
+
+        while(res[0][i]!=null){
+            consulta="update usuarios set nombre_apellido="+res[2][i]+",direccion="+res[3][i]+",nro_med_energia="+res[3][i]+",nro_med_agua="+res[4][i]+",med_energia="+res[5][i]+",med_agua="+res[6][i]+" where ruta="+res[0][i]+" and folio="+res[1][i];
+
+            bd.ejecutarConsulta(context,consulta);
+            i++;
+        }
+    }
     public String[][] actualizarRutayFolio(){
 
         return null;

@@ -12,7 +12,7 @@ import java.util.UUID;
  */
 
 public class Adminsqltite extends SQLiteOpenHelper{
-    public static int version=49;
+    public static int version=50;
 
     public Adminsqltite(Context context, String nombre, SQLiteDatabase.CursorFactory factory, int version) {
 
@@ -49,6 +49,7 @@ public class Adminsqltite extends SQLiteOpenHelper{
         db.execSQL(Orden_usuario.getTableStructQuery("agua"));
         db.execSQL(Orden_usuario.getTableStructQuery("energia"));
         db.execSQL(Opciones.getTableStructQuery());
+        db.execSQL(ActualizarRutayFolio.getTableStructQuery());
         db.insert("opciones",null,Opciones.getValoresDefault());
         db.execSQL(Usuarios_sistema.getTableStructQuery());
         for (int i=0;i<3;i++)

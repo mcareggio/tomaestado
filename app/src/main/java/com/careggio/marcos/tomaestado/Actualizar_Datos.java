@@ -71,6 +71,7 @@ public class Actualizar_Datos extends AppCompatActivity implements View.OnClickL
             String[] res;
             ActualizarRutayFolio actryf=new ActualizarRutayFolio();
             actryf.cargarTablaTemporal(this,Calculo.getPath(this,uri));
+            actryf.actualizarNombreDireNrommed(this);
         }
     }
         public static void verifyStoragePermissions(Activity activity) {
