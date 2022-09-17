@@ -4,6 +4,7 @@ import android.Manifest;
 import android.app.Activity;
 import android.content.Intent;
 import android.content.pm.PackageManager;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -54,7 +55,25 @@ public class Actualizar_Datos extends AppCompatActivity implements View.OnClickL
                 break;
         }
     }
-    public static void verifyStoragePermissions(Activity activity) {
+
+
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if (resultCode == RESULT_CANCELED) {
+            //Cancelado por el usuario
+        }
+        if ((resultCode == RESULT_OK) && (requestCode == VALOR_RETORNO)) {
+            //Procesar el resultado
+
+            Uri uri = data.getData(); //obtener el uri content
+
+            System.out.println("Archivo Seleccionado "+uri);
+            String[] res;
+            ActualizarRutayFolio actryf=new ActualizarRutayFolio();
+            actryf.cargarTablaTemporal(this,Calculo.getPath(this,uri));
+        }
+    }
+        public static void verifyStoragePermissions(Activity activity) {
         // Check if we have write permission
         int permission = ActivityCompat.checkSelfPermission(activity, Manifest.permission.WRITE_EXTERNAL_STORAGE);
         int permisioninternet= ActivityCompat.checkSelfPermission(activity,Manifest.permission.INTERNET);

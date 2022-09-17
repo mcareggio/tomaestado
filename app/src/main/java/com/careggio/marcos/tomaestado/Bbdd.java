@@ -18,21 +18,15 @@ public class Bbdd extends Activity{
     }
     public void insertar(Context context,String tabla,String[][] argumentos){
         Adminsqltite admin = new Adminsqltite(context,"administracion", null, Adminsqltite.version);
-
         SQLiteDatabase bd = admin.getWritableDatabase();
-
         ContentValues registro = new ContentValues();
         int i=0;
         while(argumentos[i][0]!=null) {
-
-
             registro.put(argumentos[i][0],argumentos[i][1]);
             System.out.println("insersion:"+argumentos[i][0]+"  "+argumentos[i][1]);
             i++;
         }
-
         bd.insert(tabla, null, registro);
-
         bd.close();
     }
     public void insertar(Context context,String tabla,ContentValues registro){
